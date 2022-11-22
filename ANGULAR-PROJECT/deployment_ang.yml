@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: angular
+  name: angular
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: angular
+  template:
+    metadata:
+      labels:
+        run: angular
+    spec:
+      containers:
+      - name: angular
+        image: pranayap/angular:latest
+        ports:
+        - containerPort: 80
